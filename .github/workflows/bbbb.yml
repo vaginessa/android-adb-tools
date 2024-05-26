@@ -15,9 +15,9 @@ env:
 on:
   # Triggers the workflow on push or pull request events but only for default and protected branches
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -40,7 +40,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 18
-          distribution: 'temurin'
+          distribution: 'zulu'
 
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
